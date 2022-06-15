@@ -37,12 +37,20 @@ $ sudo make install
 Then, go to Preferences > Security & Privacy > Full Disk Access, and add
 the executable `/usr/local/bin/com.yuriyguts.persistent-touch-id-sudo` to the allow list.
 
+Restart macOS in order for the launch daemon to take effect.
+
 ## Uninstalling
 
 ```shell
 $ sudo rm /Library/LaunchDaemons/com.yuriyguts.persistent-touch-id-sudo.plist
 $ sudo rm /usr/local/bin/com.yuriyguts.persistent-touch-id-sudo
 ```
+
+Then, go to Preferences > Security & Privacy > Full Disk Access, and remove
+`/usr/local/bin/com.yuriyguts.persistent-touch-id-sudo` from the allow list.
+
+If you'd like to stop using Touch ID for sudo as well, edit `/etc/pam.d/sudo` manually
+and remove the line containing `pam_tid.so`.
 
 ## Troubleshooting
 
