@@ -12,7 +12,7 @@
     <true/>
     <key>ProgramArguments</key>
     <array>
-        <string>/usr/local/bin/com.yuriyguts.persistent-touch-id-sudo</string>
+        <string>/usr/local/bin/persistent-touch-id-sudo</string>
     </array>
     <key>StandardOutPath</key>
     <string>/tmp/com.yuriyguts.persistent-touch-id-sudo.stdout.log</string>

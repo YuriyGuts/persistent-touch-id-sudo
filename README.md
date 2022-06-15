@@ -7,7 +7,7 @@ and persists across OS upgrades.
 
 The project installs two files on your system:
 
-1. Executable: `/usr/local/bin/com.yuriyguts.persistent-touch-id-sudo`
+1. Executable: `/usr/local/bin/persistent-touch-id-sudo`
 2. Launch daemon: `/Library/LaunchDaemons/com.yuriyguts.persistent-touch-id-sudo.plist`
 
 When macOS starts up, it runs the launch daemon, which defines how to run the executable
@@ -35,13 +35,13 @@ $ sudo make install
 ```
 
 Then, go to Preferences > Security & Privacy > Full Disk Access, and add
-the executable `/usr/local/bin/com.yuriyguts.persistent-touch-id-sudo` to the allow list.
+the executable `/usr/local/bin/persistent-touch-id-sudo` to the allow list.
 
 ## Uninstalling
 
 ```shell
 $ sudo rm /Library/LaunchDaemons/com.yuriyguts.persistent-touch-id-sudo.plist
-$ sudo rm /usr/local/bin/com.yuriyguts.persistent-touch-id-sudo
+$ sudo rm /usr/local/bin/persistent-touch-id-sudo
 ```
 
 ## Troubleshooting
