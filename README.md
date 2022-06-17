@@ -18,9 +18,10 @@ If it's not, it adds a new configuration line there allowing Touch ID to be used
 
 ### Why is it a C binary instead of a shell script?
 
-Bash scripts cannot be added to Full Disk Access permissions directly, and the user might
-consider allowing `env` or `bash` too permissive. Building the tool as a native binary allows
-adding it to the allow list directly.
+Full Disk Access permissions cannot be granted to individual shell scripts. While we can
+add them to the allow list, it will only work if we allow full disk access for all
+`env` or `bash` processes, which is too permissive. Building the tool as a standalone
+native binary allows adding it to the allow list directly.
 
 ## Installing
 
