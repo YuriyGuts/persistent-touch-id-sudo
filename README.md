@@ -10,11 +10,13 @@ The project installs two files on your system:
 1. Executable: `/usr/local/bin/persistent-touch-id-sudo`
 2. Launch daemon: `/Library/LaunchDaemons/com.yuriyguts.persistent-touch-id-sudo.plist`
 
-When macOS starts up, it runs the launch daemon, which defines how to run the executable
-and where to store its logs.
+When macOS starts up, it invokes the launch daemon, which defines the metadata for
+launching the executable (what file to run, where to store logs, etc.).
 
 The executable checks if Touch ID is already configured in `/etc/pam.d/sudo`.
 If it's not, it adds a new configuration line there allowing Touch ID to be used.
+
+The entire operation is very fast and leaves no processes running in the background.
 
 ### Why is it a C binary instead of a shell script?
 
@@ -48,7 +50,7 @@ $ sudo rm /usr/local/bin/persistent-touch-id-sudo
 ```
 
 Then, go to Preferences > Security & Privacy > Full Disk Access, and remove
-`/usr/local/bin/com.yuriyguts.persistent-touch-id-sudo` from the allow list.
+`/usr/local/bin/persistent-touch-id-sudo` from the allow list.
 
 If you'd like to stop using Touch ID for sudo as well, edit `/etc/pam.d/sudo` manually
 and remove the line containing `pam_tid.so`.
